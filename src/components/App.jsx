@@ -1,9 +1,10 @@
 import React from 'react';
+import NavHeader from './NavHeader';
 
 function App(){
   return (
     <div>
-      App Works!
+      <NavHeader/>
     </div>
   );
 }

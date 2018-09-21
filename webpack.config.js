@@ -30,34 +30,48 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        enforce: "pre",
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-        options: {
-          emitWarning: true,
-          configFile: "./.eslintrc.json"
+      rules: [
+        {
+          test: /\.jsx?$/,
+          enforce: "pre",
+          loader: "eslint-loader",
+          exclude: /node_modules/,
+          options: {
+            emitWarning: true,
+            configFile: "./.eslintrc.json"
+            }
+          },
+          {
+          test: /\.jsx?$/,
+          loader: "babel-loader",
+          exclude: /node_modules/,
+          options: {
+            presets: [
+              ["es2015", {"modules": false}],
+              "react",
+            ],
+            plugins: [
+              "react-hot-loader/babel",
+              "styled-jsx/babel"
+            ]
           }
         },
         {
-        test: /\.jsx?$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        options: {
-          presets: [
-            ["es2015", {"modules": false}],
-            "react",
-          ],
-          plugins: [
-            "react-hot-loader/babel",
-            "styled-jsx/babel"
-          ]
+          test: /\.css$/,
+          loader: "style-loader!css-loader"
+        },
+        {
+          test: /\.(png|gif|jp(e*)g|svg)$/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 8000,
+              name: 'images/[hash]-[name].[ext]'
+            }
+          }
         }
-      }
-    ]
-  },
+      ]
+    },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
