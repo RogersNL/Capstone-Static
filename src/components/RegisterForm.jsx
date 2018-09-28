@@ -1,11 +1,13 @@
 import React from 'react';
 
-function RegisterForm(){
-  return (
-    <div>
-      RegisterForm Works!
-    </div>
-  );
+class RegisterForm extends React.Component {
+  render() {    
+    return (
+      <div>
+        RegisterForm Works!
+      </div>
+    );
+  }
 }
 
 export default RegisterForm;

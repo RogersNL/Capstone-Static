@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EditAccount(){
+function EditAccount {
   return (
     <div>
       EditAccount Works!
