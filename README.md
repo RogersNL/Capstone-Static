@@ -39,7 +39,7 @@ For any questions or support details, please email:
 * Create Sign In Component
 
 **Component Structure:**
-![Alt text](src/assets/images/online-store-structure.png)
+![Alt text](src/assets/images/TCGStore.png)
 
 ## MIT License
 
